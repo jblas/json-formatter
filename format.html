@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+<title>JSON Formatter</title>
+<style>
+
+textarea {
+  width: 80%;
+  height: 40em;
+}
+
+</style>
+</head>
+
+<body>
+<button id="format-button" type="button">Format</button>
+<button id="minify-button" type="button">Minify</button>
+<br><br>
+<textarea id="json-text"></textarea>
+<script src="json-formatter.js"></script>
+<script>
+
+var formatBtn = document.getElementById( 'format-button' );
+var minifyBtn = document.getElementById( 'minify-button' );
+var jsonText = document.getElementById( 'json-text' );
+
+
+formatBtn.addEventListener( 'click', function( e ) {
+        jsonText.value = JSONFormatter.format( jsonText.value );
+    }, false);
+    
+minifyBtn.addEventListener( 'click', function( e ) {
+        jsonText.value = JSONFormatter.minify( jsonText.value );
+    }, false);
+
+
+</script>
+</body>
+</html>
